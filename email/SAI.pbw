@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "powersai\\powersai.pbt";
+@end;
+DefaultTarget "powersai\\powersai.pbt";
+DefaultRemoteTarget "powersai\\powersai.pbt";

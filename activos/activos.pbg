@@ -1,0 +1,13 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "activos\\activos.pbl" "";
+@end;
+@begin Objects
+ "activos\\w_af_menu.srw" "activos\\activos.pbl";
+ "activos\\af_menu.srm" "activos\\activos.pbl";
+ "activos\\activos_exe.srj" "activos\\activos.pbl";
+ "activos\\activos.sra" "activos\\activos.pbl";
+ "activos\\activos.srj" "activos\\activos.pbl";
+ "activos\\w_peticion_usuario_clave_af.srw" "activos\\activos.pbl";
+ "activos\\w_elige_empresa_sucursal_af.srw" "activos\\activos.pbl";
+@end;

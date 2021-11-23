@@ -1,0 +1,13 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "activos\\af_dwin.pbl" "";
+@end;
+@begin Objects
+ "activos\\d_af_cierre.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_actualiza_depreciacion.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_datosgen_activo.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_browse_tablas.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_browse_tablas_1.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_parametros_basicos.srd" "activos\\af_dwin.pbl";
+ "activos\\d_af_browse_activo.srd" "activos\\af_dwin.pbl";
+@end;

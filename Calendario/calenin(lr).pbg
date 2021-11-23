@@ -1,0 +1,12 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "calendario\\calenin(lr).pbl" "";
+@end;
+@begin Objects
+ "calendario\\u_ddcalen.sru" "calendario\\calenin(lr).pbl";
+ "calendario\\calendario.sra" "calendario\\calenin(lr).pbl";
+ "calendario\\reporte_ubicacion.srw" "calendario\\calenin(lr).pbl";
+ "calendario\\d_calendario.srd" "calendario\\calenin(lr).pbl";
+ "calendario\\d_e_fecha.srd" "calendario\\calenin(lr).pbl";
+ "calendario\\d_e_externos.srd" "calendario\\calenin(lr).pbl";
+@end;
