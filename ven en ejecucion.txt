@@ -1,0 +1,31 @@
+Este truco chequea si una aplicación esta en ejecución, y si lo está la detiene. 
+Primero se chequea si la aplicación está en ejecución usando la llmada API FindWindowA().
+ Entonces, si la ventana está en ejecución y el usuario quiere detenerla se usa la llamada API PostMessageA()
+ que muestra la ventana de mensaje WM_QUIT para detener la aplicación. 
+
+- Declaraciones de funciones externas: 
+FUNCTION ULong FindWindowA(ULong classname, String windowname) LIBRARY "user32.dll" 
+FUNCTION boolean PostMessageA(ulong hwndle,UINT wmsg,ulong wParam,ulong lParam) Library "User32.dll" 
+
+- Power Script 
+Ulong lul_handle, lul_class 
+String ls_name 
+
+// El valor hexadecimal de wm_quit es 0x0012. Convertido a valor decimal es 18. UInt lui_quit = 18 
+// Pone la Clase a NULL. Esto no es obligatorio, puedes pasarle 0 también a la función FindWindowA(). 
+SetNull(lul_class) 
+
+// Este es el código de la ventana. Por ejemplo la calculadora de Windows 
+ls_name = "Calculator" 
+
+// Usa la llamada API para obtener el puntero de la ventana si la aplicación está en ejecución. 
+lul_handle = FindWindowA(lul_class, ls_name) 
+
+IF lul_handle > 0 THEN // Si se encuentra el puntero de la ventana se muestra el mensaje wm_quit 
+PostMessageA(lul_handle, lui_quit, 0, 0); 
+return 
+Else 
+MessageBox("Aviso", "La aplicación no está en ejecución. !") 
+END IF 
+
+Por Sameer N Phatak -- sameerp@meghdoot.mastek.com 

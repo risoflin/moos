@@ -1,0 +1,541 @@
+forward
+global type m_menu_skin from menu
+end type
+type m_skines from menu within m_menu_skin
+end type
+type m_default from menu within m_skines
+end type
+type m_b-studio from menu within m_skines
+end type
+type m_chizh from menu within m_skines
+end type
+type m_galaxy from menu within m_skines
+end type
+type m_green from menu within m_skines
+end type
+type m_mac from menu within m_skines
+end type
+type m_media from menu within m_skines
+end type
+type m_metallic from menu within m_skines
+end type
+type m_paper from menu within m_skines
+end type
+type m_topsecret from menu within m_skines
+end type
+type m_webii from menu within m_skines
+end type
+type m_winaqua from menu within m_skines
+end type
+type m_zhelezeo from menu within m_skines
+end type
+type m_skines from menu within m_menu_skin
+m_default m_default
+m_b-studio m_b-studio
+m_chizh m_chizh
+m_galaxy m_galaxy
+m_green m_green
+m_mac m_mac
+m_media m_media
+m_metallic m_metallic
+m_paper m_paper
+m_topsecret m_topsecret
+m_webii m_webii
+m_winaqua m_winaqua
+m_zhelezeo m_zhelezeo
+end type
+global type m_menu_skin from menu
+m_skines m_skines
+end type
+end forward
+
+global type m_menu_skin from menu
+m_skines m_skines
+end type
+global m_menu_skin m_menu_skin
+
+type variables
+
+end variables
+
+on m_menu_skin.create
+m_menu_skin=this
+call super::create
+this.m_skines=create m_skines
+this.Item[UpperBound(this.Item)+1]=this.m_skines
+end on
+
+on m_menu_skin.destroy
+call super::destroy
+destroy(this.m_skines)
+end on
+
+type m_skines from menu within m_menu_skin
+m_default m_default
+m_b-studio m_b-studio
+m_chizh m_chizh
+m_galaxy m_galaxy
+m_green m_green
+m_mac m_mac
+m_media m_media
+m_metallic m_metallic
+m_paper m_paper
+m_topsecret m_topsecret
+m_webii m_webii
+m_winaqua m_winaqua
+m_zhelezeo m_zhelezeo
+end type
+
+on m_skines.create
+call super::create
+this.text = "&Skines"
+this.microhelp = "Skines"
+this.toolbaritemtext = "Skines"
+this.m_default=create m_default
+this.m_b-studio=create m_b-studio
+this.m_chizh=create m_chizh
+this.m_galaxy=create m_galaxy
+this.m_green=create m_green
+this.m_mac=create m_mac
+this.m_media=create m_media
+this.m_metallic=create m_metallic
+this.m_paper=create m_paper
+this.m_topsecret=create m_topsecret
+this.m_webii=create m_webii
+this.m_winaqua=create m_winaqua
+this.m_zhelezeo=create m_zhelezeo
+this.Item[UpperBound(this.Item)+1]=this.m_default
+this.Item[UpperBound(this.Item)+1]=this.m_b-studio
+this.Item[UpperBound(this.Item)+1]=this.m_chizh
+this.Item[UpperBound(this.Item)+1]=this.m_galaxy
+this.Item[UpperBound(this.Item)+1]=this.m_green
+this.Item[UpperBound(this.Item)+1]=this.m_mac
+this.Item[UpperBound(this.Item)+1]=this.m_media
+this.Item[UpperBound(this.Item)+1]=this.m_metallic
+this.Item[UpperBound(this.Item)+1]=this.m_paper
+this.Item[UpperBound(this.Item)+1]=this.m_topsecret
+this.Item[UpperBound(this.Item)+1]=this.m_webii
+this.Item[UpperBound(this.Item)+1]=this.m_winaqua
+this.Item[UpperBound(this.Item)+1]=this.m_zhelezeo
+end on
+
+on m_skines.destroy
+call super::destroy
+destroy(this.m_default)
+destroy(this.m_b-studio)
+destroy(this.m_chizh)
+destroy(this.m_galaxy)
+destroy(this.m_green)
+destroy(this.m_mac)
+destroy(this.m_media)
+destroy(this.m_metallic)
+destroy(this.m_paper)
+destroy(this.m_topsecret)
+destroy(this.m_webii)
+destroy(this.m_winaqua)
+destroy(this.m_zhelezeo)
+end on
+
+type m_default from menu within m_skines
+end type
+
+event clicked;W_Skin.OLE_Skin.object.RemoveSkin(long(w_skin))
+
+Long    W_Color
+Long    T_Color
+String  Aplico_w_color
+String  Aplico_T_color
+ 
+W_Color        =w_skin.BacKColor
+Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+W_Skin.dw_1.Modify ( Aplico_w_color )
+
+ 
+Aplico_T_color = "Provincias_t.Color="+"'"+String(Color_inicial)+"'"
+W_Skin.dw_1.Modify ( Aplico_T_color )
+end event
+
+on m_default.create
+call super::create
+this.text = "Default"
+end on
+
+on m_default.destroy
+call super::destroy
+end on
+
+type m_b-studio from menu within m_skines
+end type
+
+on m_b-studio.create
+call super::create
+this.text = "B-studio"
+this.toolbaritemtext = "B-studio"
+end on
+
+on m_b-studio.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_chizh from menu within m_skines
+end type
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+on m_chizh.create
+call super::create
+this.text = "Chizh"
+end on
+
+on m_chizh.destroy
+call super::destroy
+end on
+
+type m_galaxy from menu within m_skines
+end type
+
+on m_galaxy.create
+call super::create
+this.text = "Galaxy"
+end on
+
+on m_galaxy.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_green from menu within m_skines
+end type
+
+on m_green.create
+call super::create
+this.text = "Green"
+end on
+
+on m_green.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_mac from menu within m_skines
+end type
+
+on m_mac.create
+call super::create
+this.text = "Mac"
+end on
+
+on m_mac.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_media from menu within m_skines
+end type
+
+on m_media.create
+call super::create
+this.text = "Media"
+end on
+
+on m_media.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_metallic from menu within m_skines
+end type
+
+on m_metallic.create
+call super::create
+this.text = "Metallic"
+end on
+
+on m_metallic.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_paper from menu within m_skines
+end type
+
+on m_paper.create
+call super::create
+this.text = "Paper"
+end on
+
+on m_paper.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_topsecret from menu within m_skines
+end type
+
+on m_topsecret.create
+call super::create
+this.text = "TopSecret"
+end on
+
+on m_topsecret.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_webii from menu within m_skines
+end type
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+on m_webii.create
+call super::create
+this.text = "Web-II"
+end on
+
+on m_webii.destroy
+call super::destroy
+end on
+
+type m_winaqua from menu within m_skines
+end type
+
+on m_winaqua.create
+call super::create
+this.text = "Winaqua"
+end on
+
+on m_winaqua.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event
+type m_zhelezeo from menu within m_skines
+end type
+
+on m_zhelezeo.create
+call super::create
+this.text = "Zhelezo"
+end on
+
+on m_zhelezeo.destroy
+call super::destroy
+end on
+
+event clicked;Long hWnd
+hWnd=Handle(W_Skin)
+W_Skin.OLE_Skin.object.LoadSkin(Trim(This.Text)+".skn")
+W_Skin.OLE_Skin.object.ApplySkin (hWnd)
+
+ Long    W_Color
+ Long    T_Color
+ String  Aplico_w_color
+ String  Aplico_T_Color
+ 
+ W_Color        =w_skin.ole_skin.object.WindowColor()
+ Aplico_w_color = "DataWindow.Color="+"'"+String(W_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_W_color )
+
+ T_Color        =w_skin.ole_skin.object.PanelTextColor()
+ Aplico_T_color = "Provincias_t.Color="+"'"+String(T_Color)+"'"
+ W_Skin.dw_1.Modify ( Aplico_T_color )
+ 
+end event

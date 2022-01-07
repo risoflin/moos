@@ -3,8 +3,14 @@ Save Format v3.0(19990112)
 @end;
 @begin Targets
  0 "powersai\\powersai.pbt";
- 1 "alertaCustodia\\alertascustodia.pbt";
- 2 "Fecha Sistema\\fecha_sistema.pbt";
+ 1 "utilerias\\utilerias.pbt";
+ 2 "fecha sistema\\fecha_sistema.pbt";
+ 3 "kardex\\kardex.pbt";
+ 4 "entrada_salida\\entrada_salida.pbt";
+ 5 "danec.pbt";
+ 6 "gerencial\\gerencial.pbt";
+ 7 "subir datos server\\srv_subir_datos.pbt";
+ 8 "conecciones\\concciones.pbt";
 @end;
 DefaultTarget "powersai\\powersai.pbt";
 DefaultRemoteTarget "powersai\\powersai.pbt";

@@ -1,0 +1,281 @@
+forward
+global type w_skin from window
+end type
+type ole_skin from olecustomcontrol within w_skin
+end type
+type dw_1 from datawindow within w_skin
+end type
+type em_1 from editmask within w_skin
+end type
+type vsb_1 from vscrollbar within w_skin
+end type
+type cb_2 from commandbutton within w_skin
+end type
+type hsb_1 from hscrollbar within w_skin
+end type
+type cbx_1 from checkbox within w_skin
+end type
+type rb_1 from radiobutton within w_skin
+end type
+type cb_1 from commandbutton within w_skin
+end type
+type gb_1 from groupbox within w_skin
+end type
+type mle_1 from multilineedit within w_skin
+end type
+end forward
+
+global type w_skin from window
+integer width = 2697
+integer height = 1248
+boolean titlebar = true
+string title = "Skin System by Jorge A Nellar for PowerBuilder"
+string menuname = "m_menu_skin"
+boolean controlmenu = true
+boolean minbox = true
+boolean maxbox = true
+boolean resizable = true
+long backcolor = 67108864
+string icon = "AppIcon!"
+boolean center = true
+ole_skin ole_skin
+dw_1 dw_1
+em_1 em_1
+vsb_1 vsb_1
+cb_2 cb_2
+hsb_1 hsb_1
+cbx_1 cbx_1
+rb_1 rb_1
+cb_1 cb_1
+gb_1 gb_1
+mle_1 mle_1
+end type
+global w_skin w_skin
+
+type variables
+String LoadSkin
+
+end variables
+
+on w_skin.create
+if this.MenuName = "m_menu_skin" then this.MenuID = create m_menu_skin
+this.ole_skin=create ole_skin
+this.dw_1=create dw_1
+this.em_1=create em_1
+this.vsb_1=create vsb_1
+this.cb_2=create cb_2
+this.hsb_1=create hsb_1
+this.cbx_1=create cbx_1
+this.rb_1=create rb_1
+this.cb_1=create cb_1
+this.gb_1=create gb_1
+this.mle_1=create mle_1
+this.Control[]={this.ole_skin,&
+this.dw_1,&
+this.em_1,&
+this.vsb_1,&
+this.cb_2,&
+this.hsb_1,&
+this.cbx_1,&
+this.rb_1,&
+this.cb_1,&
+this.gb_1,&
+this.mle_1}
+end on
+
+on w_skin.destroy
+if IsValid(MenuID) then destroy(MenuID)
+destroy(this.ole_skin)
+destroy(this.dw_1)
+destroy(this.em_1)
+destroy(this.vsb_1)
+destroy(this.cb_2)
+destroy(this.hsb_1)
+destroy(this.cbx_1)
+destroy(this.rb_1)
+destroy(this.cb_1)
+destroy(this.gb_1)
+destroy(this.mle_1)
+end on
+
+event open; Color_Inicial=Long(w_skin.dw_1.Modify ( "Provincias_t.Color"))
+end event
+
+type ole_skin from olecustomcontrol within w_skin
+integer x = 2446
+integer y = 64
+integer width = 146
+integer height = 128
+integer taborder = 60
+borderstyle borderstyle = stylelowered!
+boolean focusrectangle = false
+string binarykey = "w_skin.win"
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+end type
+
+type dw_1 from datawindow within w_skin
+integer x = 14
+integer y = 48
+integer width = 919
+integer height = 908
+integer taborder = 50
+string title = "none"
+string dataobject = "d_test"
+boolean hscrollbar = true
+boolean vscrollbar = true
+boolean livescroll = true
+borderstyle borderstyle = stylelowered!
+end type
+
+type em_1 from editmask within w_skin
+integer x = 2057
+integer y = 56
+integer width = 343
+integer height = 88
+integer taborder = 50
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+string text = "1"
+alignment alignment = center!
+borderstyle borderstyle = stylelowered!
+string mask = "#"
+boolean spin = true
+string minmax = "1~~10"
+end type
+
+type vsb_1 from vscrollbar within w_skin
+integer x = 2505
+integer y = 192
+integer width = 78
+integer height = 388
+integer maxposition = 10
+integer position = 5
+end type
+
+type cb_2 from commandbutton within w_skin
+integer x = 2089
+integer y = 700
+integer width = 498
+integer height = 112
+integer taborder = 50
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+boolean enabled = false
+string text = "Disabled"
+end type
+
+type hsb_1 from hscrollbar within w_skin
+integer x = 2080
+integer y = 600
+integer width = 498
+integer height = 68
+integer maxposition = 10
+integer position = 5
+end type
+
+type cbx_1 from checkbox within w_skin
+integer x = 2053
+integer y = 416
+integer width = 462
+integer height = 76
+integer textsize = -9
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "Check Box"
+end type
+
+type rb_1 from radiobutton within w_skin
+integer x = 2053
+integer y = 236
+integer width = 425
+integer height = 80
+integer textsize = -9
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "Radio Button"
+end type
+
+type cb_1 from commandbutton within w_skin
+integer x = 2089
+integer y = 832
+integer width = 498
+integer height = 112
+integer taborder = 40
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+string pointer = "HyperLink!"
+string text = "&Salir"
+boolean cancel = true
+end type
+
+event clicked;Close(Parent)
+end event
+
+type gb_1 from groupbox within w_skin
+integer x = 955
+integer y = 16
+integer width = 1051
+integer height = 940
+integer taborder = 40
+integer textsize = -10
+integer weight = 700
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+boolean italic = true
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "Comentarios"
+end type
+
+type mle_1 from multilineedit within w_skin
+integer x = 1019
+integer y = 92
+integer width = 923
+integer height = 800
+integer taborder = 40
+boolean bringtotop = true
+integer textsize = -9
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+boolean vscrollbar = true
+borderstyle borderstyle = stylelowered!
+end type
+
+event constructor;Mle_1.Text= "   " + &
+"Siempre crei que seria imposible aplicar un Skin a mis aplicaciones,tal como lo hace por ejemplo Winamp, pero un dia descubri  ActiveSkin © 2001-2003 de SoftShape, Orientado a VB, Delphi y C++ pero luego de varias dias y horas lo he aplicado a PowerBuilder , aqui comparto con Uds. lo logrado hasta la fecha, Hay Objetos de PowerBuilder que no son soportados por ActiveSkin Lamentablemente uno de ellos son las DW, pero creo no sera inconveniente para mejorar la imagen de nuestras aplicaciones, pues con un poquito de ingenio y con todas las funciones que provee ActiveSkin salvamos los inconvenientes. Esta aplicacion  esta compilada en PB 8.0.3 , les adjunto los sources en formato txt de esta manera solo hacen un paste en otra versión anterior y seguro les funciona,como asi también en formato *.sr* con lo cual lo pueden importar directamente , Asimismo adjunto el OCX y todos los Skines provistos con ActiveSkin,- En el afan de haber contribuido aunque más no sea con un granito de arena, Les deseo muchisima suerte. -- Debo también mencionar la colaboración de uno si no es el más activo de los Foristas, Oscar Velasco  , quien indago e investigo también sobre este producto , Solo queda decir de que pueden usarlo libremente, salvo que siempre hagan referencia que el componente ocx pertenece a un tercero."
+end event

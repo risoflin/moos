@@ -1,0 +1,148 @@
+Novedades
+
+Bancos
+------
+falta el reporte de retenciones por numero 					(realizado 22-06-2007)
+
+Falta crear en emision de cheques que cuando modifique e ingrese un abono
+no se pierda la retencion de lo que ya esta ingresado. 				(realizado 25-06-2007)
+
+doc por pagar el reporte salga ordenado alfabeticamente 			(realizado 25-jun-2007)
+
+al momento de modificar un cheque se me va al ultimo registro.			(realizado 25-jun-2007)
+
+cuando llamo a una factura me debe pegar todos los creditos emision de cheques
+
+falta crear que cuando presione f3 en emision de cheques en los abonos me 
+salgan todas las facturas pendiente del proveedor.
+
+Crear un control que valide que el total de la suma de los dividendos sea igual 
+al total de la factura.
+
+Revizar el control de no se puede anular porque existen abonos aplicados a 
+este documento.(porque no habian dividendos creados)				(realizado 27-jun-2007)
+
+Modificar el reporte de doc x pagar me salga tambien las notas de debito
+
+El reporte de "cheques por periodo" agrandar el campo e numero de egreso
+
+Generar un reporte que permita saber la deuda total del proveedor 
+Total Factura - (retencion + nota de credito)
+
+Hacer una consulta para poder saber cuantas facuras no tienen dividendo
+
+
+
+Inventario
+------------
+Cambiar en el ingreso de bodega en vez de elegir el codigo producto, elegir	
+el codigo alterno								(relizado 25-jun-2007)
+
+programar y controlar el ingreso del producto con codigo de barra en el 
+maestro de producto								(relizado 25-jun-2007)
+
+El reporte del kardex hacer mas grande el campo donde sale el numero
+de la transaccion 								(relizado 02-jul-2007)
+
+en el ingreso de bodega no me esta validando si no existe el producto		(relizado 03-jul-2007)
+
+no deben de salir en la consulta los productos suspendidos
+
+al momento de crear el producto la ubicacion debe ser 001
+
+al momento de crear un producto las cta deben salir por defecto
+
+revisar el reporte de estado de producto a consulta donde sale todo el detalle
+
+
+Punto de Venta
+----------------
+Como trabajar con los creditos
+
+Arreglar las devoluciones, revisar los costos y al momento de la devolucion 
+traer en que agencia se hizo ese documento
+
+Arreglar que cuando me cancelen con tarjeta y no cancela se genere una cta x 
+cobrar 										(relizado 01-jul-2007)
+
+cuando me pagan con cheques y efectivo debo coger la cta caja cliente
+caso contrario la cuenta cliente (cta x cobrar)
+
+la ventana de devolucion esta fallando
+
+informe de ventas esta fallando
+
+modificar el sp_fa_boleta_de_venta
+
+LINEA 59 VALIDA_DATOS FACTURACION
+
+
+Facturacion
+-------------
+Arreglar los sp_actualiza_fcdoccar y fcmovcar
+
+
+Varios
+------
+la pantalla de busca producto no esta funcionando con el stock y precio
+
+
+
+Arreglar los campos del sp_saldo_cant_costo_promedio los '=' por 'IS'		OK
+Arreglar los campos del sp_actualiza_salpro los '=' por 'IS'			OK
+
+arreglar el sp_fa_browse_facturas_jc original la portatil bdd polipapeleria
+Arreglar el SP_fa_ACTUALIZA_FCDOCCAR original en la portatil (polipapeeria) 	ok
+Arreglar el SP_fa_ACTUALIZA_FCmovCAR original en la portatil (polipapeeria) 	ok
+Arreglar el SP_IN_NUMERO_MOVIMIENTOS original en la portatil (polipapeeria) 	ok
+Arreglar el SP_fa_ventas_por_productos original en la portatil (polipapeeria)	ok ojo falta las devoluciones
+Arreglar el SP_fa_boleta_de_venta original en la portatil (polipapeeria)	ok
+
+
+Arreglar los argumentos del uf_actualiza_fcdoccar y uf_actualiza_fcmovcar de la facturacion
+
+Cambiar los campos de la tablas a decimal estan en el cuaderno
+FCMOVINV	COSTO		DECIMAL 9 decimales
+		COSTO_DOL	DECIMAL 9 decimales
+FCSALPRO	COSTO_UNIT	DECIMAL 9 decimales
+		COSTO_DOL	DECIMAL 9 decimales
+FCPRODUC	COSTO		DECIMAL 9 decimales
+		COSTO_REP	DECIMAL 9 decimales
+BPABONOS	VALOR_ABONO	DECIMAL 2 decimales
+BPDIVIDENDOS	VALOR_DOC	DECIMAL 2 decimales
+BPFACTUR	SUBTOTAL	DECIMAL 2 decimales
+		VALOR_FAC	DECIMAL 2 decimales
+		VALOR_IVA	DECIMAL 2 decimales
+		VALOR_ICE	DECIMAL 2 decimales
+		SUBSINIVA	DECIMAL 2 decimales
+		SUBIVA12	DECIMAL 2 decimales
+		MONTOICE	DECIMAL 2 decimales
+		BASEIMPRET	DECIMAL 2 decimales
+BPMOVIMI	VALOR		DECIMAL 2 decimales
+		VALOR_RET	DECIMAL 2 decimales
+		VALOR_IVA	DECIMAL 2 decimales
+FCDOCFAC	SUBTOTAL	DECIMAL 2 decimales
+		DESCUENTO	DECIMAL 2 decimales
+		IMPUESTO	DECIMAL 2 decimales
+		TOTAL		DECIMAL 2 decimales
+
+FCMOVFAC	PRECIO_LST	DECIMAL 4 decimales
+		SUBTOTAL	DECIMAL 2 decimales
+		IVA		DECIMAL 4 decimales
+		IMPUESTO	DECIMAL 2 decimales
+		DESCUENTO	DECIMAL 2 decimales
+		TOTAL		DECIMAL 2 decimales
+		COSTO		DECIMAL 2 decimales
+		COSTODOL	DECIMAL 2 decimales
+
+
+
+FCMOVCAR	SUBTOTAL	DECIMAL 2 decimales
+		TOTAL		DECIMAL 2 decimales
+		RETENCION	DECIMAL 2 decimales
+
+
+
+factura 	004-001-40002402
+nota venta	004-001-40036972
+

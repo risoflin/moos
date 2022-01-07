@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "archivo_xml.pbt";
+ 1 "..\\facturacion\\facturacion.pbt";
+@end;
+DefaultTarget "archivo_xml.pbt";
+DefaultRemoteTarget "archivo_xml.pbt";
